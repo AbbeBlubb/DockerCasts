@@ -1,0 +1,15 @@
+# Start with the docker-compose version to be used
+version: "3"
+# A service is "kind of a container"
+services:
+  redis-server:
+    image: "redis"
+  node-app:
+    restart: on-failure
+    # Look in the current directory for a Dockerfile and use it to build
+    build: .
+    # Specify the ports for the container
+    ports:
+      # The dash in a yammel file is an array
+      # Map port on local machine to a port insie of the container
+      - "4001:8081"

@@ -2,11 +2,13 @@
 version: "3"
 # A service is "kind of a container"
 services:
+  # Give a name for the first service
   redis-server:
     image: "redis"
+  # Give a name for the second service
   node-app:
     restart: on-failure
-    # Look in the current directory for a Dockerfile and use it to build
+    # Look in the current directory for a DOCKERFILE and use it to build
     build: .
     # Specify the ports for the container
     ports:

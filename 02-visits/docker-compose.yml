@@ -2,10 +2,10 @@
 version: "3"
 # A service is "kind of a container"
 services:
-  # Give a name for the first service
+  # Give a name to the service. Will appear in console
   redis-server:
     image: "redis"
-  # Give a name for the second service
+  # Give a name to the service. Will appear in console
   node-app:
     restart: on-failure
     # Look in the current directory for a DOCKERFILE and use it to build

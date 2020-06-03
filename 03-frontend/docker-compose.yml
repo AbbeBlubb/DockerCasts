@@ -1,3 +1,4 @@
+# YAML syntax - whitespace indentation!
 version: '3'
 services:
   web:

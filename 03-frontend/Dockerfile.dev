@@ -19,7 +19,8 @@ RUN npm install
 # After npm install, copy over everything else
 # Changes to index.js will thus not invalidate the steps above! (The cashed versions of the images will be reused - in a production project a rebuuild of one step can take minutes)
 # . is relative to WORKDIR
+# COPY is not really needed here, as this project requires volumes (se the docker-compose.yml), but COPY is still here if this Dockerfile.dev is used as base template for other images
 COPY . .
 
-# Default command
+# Default command to run on docker build . / docker build -f Dockerfile.dev .
 CMD ["npm", "run", "start"]

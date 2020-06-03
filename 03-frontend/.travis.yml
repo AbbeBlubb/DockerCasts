@@ -1,9 +1,13 @@
-sudo: required
+# The filename must be .travis.yml, with "." !
+sudo: required # Superdo/user level permissions
 services:
-  - docker
+  - docker # Installs the Docker CLI
 
 before_install:
-  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
+  # Build the Docker image. 
+  # On build, the container ID is generated. Because Travis CI is automated and the ID is not known, the image needs to be tagged to be referenced later
+  # Convention to have tag as: <you docker username>/<your docker repo name you pulled the image from>
+  - docker build -t abbeblubb/docker-react  -f Dockerfile.dev .
 
 script:
   - docker run stephengrider/docker-react npm run test -- --coverage

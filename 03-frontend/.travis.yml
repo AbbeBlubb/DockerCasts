@@ -6,8 +6,8 @@ services:
 before_install:
   # Build the Docker image. 
   # On build, the container ID is generated. Because Travis CI is automated and the ID is not known, the image needs to be tagged to be referenced later
-  # Convention to have tag as: <you docker username>/<your docker repo name you pulled the image from>
-  - docker build -t abbeblubb/docker-react  -f Dockerfile.dev .
+  # Convention to have tag as: <you docker username>/<your docker repo name>
+  - docker build -t abbeblubb/docker-react -f Dockerfile.dev .
 
 script:
   - docker run stephengrider/docker-react npm run test -- --coverage

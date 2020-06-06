@@ -1,6 +1,7 @@
 # YAML syntax - whitespace indentation!
 version: '3'
 services:
+  # Service 1: Running dev server
   web:
     build:
       context: .
@@ -10,6 +11,7 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
+    # Service 2: Running and re running tests
   tests:
     build:
       context: .
